@@ -52,53 +52,7 @@ public class sanity extends base
 		counts = PageFactory.initElements(driver, counts.class);
 		counting = PageFactory.initElements(driver, counting.class);
 	}
-	
 
-	public static void initBrowser(String BrowserType) throws ParserConfigurationException, SAXException, IOException
-	{
-		switch (BrowserType.toLowerCase())
-		{
-		case "firefox":
-			driver = initFFDriver();
-			break;
-		case "ie":
-			driver = initIEDriver();
-			break;
-		case "chrome":
-			driver = initChromeDriver();
-			break;
-		}
-		driver.manage().window().maximize();
-		driver.get(getData("URL"));
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
-		screen = new Screen();
-	}
-	
-	public static WebDriver initFFDriver() throws ParserConfigurationException, SAXException, IOException
-	{
-		System.setProperty("webdriver.gecko.driver", getData("FFDriverPath"));
-		WebDriver driver = new FirefoxDriver();
-		return driver;
-	}
-	
-	public static WebDriver initIEDriver() throws ParserConfigurationException, SAXException, IOException
-	{
-		System.setProperty("webdriver.ie.driver", getData("IEDriverPath"));
-		WebDriver driver = new InternetExplorerDriver();
-		return driver;
-	}
-	
-	public static WebDriver initChromeDriver() throws ParserConfigurationException, SAXException, IOException
-	{
-		System.setProperty("webdriver.chrome.driver", getData("ChromeDriverPath"));
-		WebDriver driver = new ChromeDriver();
-		return driver;
-	}
-	
-	
-	
-	
-	
 	
 	@Test
 	public void loginTest() throws IOException, ParserConfigurationException, SAXException

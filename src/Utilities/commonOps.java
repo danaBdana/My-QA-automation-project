@@ -55,20 +55,7 @@ public class commonOps extends base
 				test.log(LogStatus.FAIL, "Element NOT Exists! See screen shot: " + test.addScreenCapture(takeSS()));
 			}
 		
-//		public void selectDropDown(WebElement elem)
-//		{
-//			try 
-//			{
-//				Select myValue = new Select(elem);
-//				myValue.selectByValue(value1);
-//				System.out.println("Element Exists!");
-//			} 
-//			catch (Exception e) 
-//			{
-//				System.out.println("Element NOT Exists!");
-//				fail("Element NOT Exists!");  
-//			}
-//		}
+	
 
 		
 		
